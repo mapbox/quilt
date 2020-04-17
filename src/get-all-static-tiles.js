@@ -1,6 +1,6 @@
 'use strict';
 
-const getTileUrl = require('./get-tile-url');
+const getTileUrl = require('../utils/get-tile-url');
 const getStaticTile = require('./get-static-tile');
 
 function getAllTiles(tileImgProperties, { style, accessToken }) {

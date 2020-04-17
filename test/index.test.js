@@ -12,7 +12,7 @@ const fixture = {
   accessToken
 };
 
-const mockBuffer = fs.readFileSync('./fixtures/fake-tile.png')
+const mockBuffer = fs.readFileSync(__dirname + '/fixtures/fake-tile.png');
 
 const options = [[0, 0], 1, 500, false];
 

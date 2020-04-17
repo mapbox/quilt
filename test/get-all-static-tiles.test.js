@@ -2,7 +2,7 @@
 
 const getAllStaticTiles = require('../src/get-all-static-tiles');
 
-jest.mock('./get-static-tile', () => {
+jest.mock('../src/get-static-tile', () => {
   return jest.fn().mockImplementation(() => {
     return Promise.resolve('💠');
   })
@@ -10,7 +10,7 @@ jest.mock('./get-static-tile', () => {
 const getTile = require('../src/get-static-tile');
 
 
-const { ImgDim500 } = require('../../fixtures/img-properties-objs');
+const { ImgDim500 } = require('./fixtures/img-properties-objs');
 const accessToken = process.env.MAPBOX_ACCESS_TOKEN || process.env.MapboxAccessToken;
 
 const requestOptions = {

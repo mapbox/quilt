@@ -9,4 +9,4 @@ function checkToken(token) {
   return token;
 }
 
-module.exports = getToken;
+module.exports = checkToken;

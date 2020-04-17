@@ -1,7 +1,7 @@
 'use strict';
 
 const { BASE_URL } = require('./constants');
-const getToken = require('./get-token');
+const checkToken = require('./check-token');
 const invalidStyleUrl = require('./invalid-style-url');
 
 
@@ -14,7 +14,7 @@ function getTileUrl(
   if (invalidStyleUrl(style)) {
     throw new Error(invalidStyleUrl(style));
   }
-  const token = getToken(accessToken);
+  const token = checkToken(accessToken);
   const id = style.split('mapbox://styles/').pop();
 
   return `${BASE_URL}/${id}/tiles/${zoom}/${tileX}/${tileY}?access_token=${token}`;

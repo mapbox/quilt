@@ -1,6 +1,6 @@
 'use strict';
 
-const { TILE_SIZE } = require('../constants');
+const { TILE_SIZE } = require('../utils/constants');
 
 function getRelativePx(tileIndex, centerIndex, dimensions, tileSize = TILE_SIZE) {
   const relativePx = {

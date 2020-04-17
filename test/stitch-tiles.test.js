@@ -4,7 +4,7 @@ const stitchTiles = require('../src/stitch-tiles');
 const { PNG } = require('pngjs');
 const fs = require('fs');
 
-const mockTileBuffer = fs.readFileSync('./fixtures/fake-tile.png');
+const mockTileBuffer = fs.readFileSync(__dirname + '/fixtures/fake-tile.png');
 const mockTileArray = Promise.all([
   { buffer: mockTileBuffer, x: 0, y: 0, reencode: true },
   { buffer: mockTileBuffer, x: 0, y: 340, reencode: true },
@@ -12,7 +12,7 @@ const mockTileArray = Promise.all([
   { buffer: mockTileBuffer, x: 340, y: 340, reencode: true }
 ]);
 
-const expected = fs.readFileSync('./fixtures/stitch-expected.png');
+const expected = fs.readFileSync(__dirname + '/fixtures/stitch-expected.png');
 
 describe('stitchTiles', () => {
   test('generates expected decoded image', () => {

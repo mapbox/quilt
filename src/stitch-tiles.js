@@ -1,6 +1,6 @@
 'use strict'
 
-const { DEFAULT_LENGTH } = require('../constants');
+const { DEFAULT_LENGTH } = require('../utils/constants');
 const mapnik = require('mapnik');
 const { PNG } = require('pngjs');
 
