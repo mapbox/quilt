@@ -3,7 +3,7 @@
 const getPxOffsets = require('../src/get-relative-pixel-offsets');
 
 describe('getPxOffsets', () => {
-  const defaultDimensions = { h: 500, w: 500 }
+  const defaultDimensions = { h: 500, w: 500 };
 
   test('generates different offsets based on image dimensions', () => {
     const mockCenter = { column: 4, row: 3, zoom: 4 };

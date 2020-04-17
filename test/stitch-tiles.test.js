@@ -31,7 +31,7 @@ describe('stitchTiles', () => {
 
     stitchTiles(mockTileArray, 500, false).then((result) => {
       expect(result).toEqual(expectedNonDecoded);
-    })
+    });
   });
 
   test('throws if mapnik blend throws', () => {
@@ -41,5 +41,5 @@ describe('stitchTiles', () => {
     expect(stitchTiles(mockBadTileArray)).rejects.toEqual(
       TypeError('Uncaught TypeError: First argument must be an array of Buffers.')
     );
-  })
+  });
 });

@@ -20,7 +20,7 @@ module.exports.ImgDim1000 = {
     { x: 4, y: 3, z: 4, px: 489, py: 11 },
     { x: 4, y: 4, z: 4, px: 489, py: 523 }
   ],
-    dimensions: { h: 1000, w: 1000 },
+  dimensions: { h: 1000, w: 1000 },
   center: { column: 4, row: 3, zoom: 4 }
 };
 
@@ -33,7 +33,7 @@ module.exports.ImgTs256 = {
     { x: 4, y: 3, z: 4, px: 245, py: 6 },
     { x: 4, y: 4, z: 4, px: 245, py: 262 }
   ],
-    dimensions: { h: 500, w: 500 },
+  dimensions: { h: 500, w: 500 },
   center: { column: 4, row: 3, zoom: 4 }
 };
 

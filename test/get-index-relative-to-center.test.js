@@ -18,7 +18,7 @@ describe('getIndexRelativeToCenter', () => {
     expect(getIndexRelativeToCenter({ x: 600, y: 600 }, { column: 0.5, row: 0.5, zoom: 0 }, { h: 600, w: 600 }))
       .toEqual({ column: 1, row: 1, zoom: 0 });
     expect(getIndexRelativeToCenter({ x: 1024, y: 1024 }, { column: 10, row: 10, zoom: 2 }, { h: 1024, w: 1024 }))
-      .toEqual({ column: 11, row: 11, zoom: 2 })
+      .toEqual({ column: 11, row: 11, zoom: 2 });
   });
   test('returns correct index 1024', () => {
     expect(getIndexRelativeToCenter({ x: 0, y: 0 }, mockProximateCenterIndex, { h: 500, w: 600 }, 1024))

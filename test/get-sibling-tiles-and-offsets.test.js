@@ -14,11 +14,11 @@ describe('getSiblingTilesAndOffsets', () => {
   test('properly wraps negative tiles', () => {
     getSiblingTiles({ x: 4096, y: 2048 }, 3).then((imgProps) => {
       const minIndex = imgProps.tiles.reduce((prev, current) => {
-        return (prev.x < current.x) ? prev.x : current.x
+        return (prev.x < current.x) ? prev.x : current.x;
       });
 
       expect(minIndex).toEqual(0);
-    })
+    });
   });
 
   test('image dimensions affect number of tiles required', () => {
@@ -44,12 +44,12 @@ describe('getSiblingTilesAndOffsets', () => {
   test('zoom is passed through properly', () => {
     getSiblingTiles(mockPx, 6).then((imgProps) => {
       expect(imgProps.center.zoom).toEqual(6);
-    })
+    });
 
     getSiblingTiles(mockPx, 6).then((imgProps) => {
-      const zooms = imgProps.tiles.map(tile => { return tile.z });
+      const zooms = imgProps.tiles.map((tile) => { return tile.z; });
       zooms.forEach((zoom) => {
-        expect(zoom).toEqual(6)
+        expect(zoom).toEqual(6);
       });
     });
   });
@@ -57,6 +57,6 @@ describe('getSiblingTilesAndOffsets', () => {
   test('only returns one tile if zoom === 0', () => {
     getSiblingTiles({ x: 256, y: 256 }, 0).then((imgProps) => {
       expect(imgProps.tiles.length).toEqual(1);
-    })
-  })
+    });
+  });
 });

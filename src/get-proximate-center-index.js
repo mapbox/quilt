@@ -8,7 +8,7 @@ function getProximateCenterIndex(pxCoord, zoom, tileSize = TILE_SIZE) {
     column: pxCoord.x / tileSize,
     row: pxCoord.y / tileSize,
     zoom: zoom
-  }
-};
+  };
+}
 
 module.exports = getProximateCenterIndex;

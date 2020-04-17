@@ -5,7 +5,7 @@ const getAllStaticTiles = require('../src/get-all-static-tiles');
 jest.mock('../src/get-static-tile', () => {
   return jest.fn().mockImplementation(() => {
     return Promise.resolve('💠');
-  })
+  });
 });
 const getTile = require('../src/get-static-tile');
 

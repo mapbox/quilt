@@ -7,7 +7,7 @@ const getStaticTile = require('../src/get-static-tile');
 const accessToken = process.env.MAPBOX_ACCESS_TOKEN || process.env.MapboxAccessToken;
 
 const urlFixture = `https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/0/0/0?access_token=${accessToken}`;
-const pxFixture = { x: 256, y: 256 }
+const pxFixture = { x: 256, y: 256 };
 
 describe('getStaticTile', () => {
   beforeEach(() => {

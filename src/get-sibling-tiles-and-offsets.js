@@ -33,7 +33,7 @@ function getSiblingTilesAndOffsets(
       };
 
       // Ensure we wrap tiles with negative coordinate values
-      coordinate.column = (coordinate.column + maxTiles) % maxTiles
+      coordinate.column = (coordinate.column + maxTiles) % maxTiles;
 
       const relativePx = getRelativePx(coordinate, centerIndex, dimensions, tileSize);
 
@@ -43,7 +43,7 @@ function getSiblingTilesAndOffsets(
         z: coordinate.zoom,
         px: Math.round(relativePx.x),
         py: Math.round(relativePx.y)
-      })
+      });
     }
   }
 
@@ -54,7 +54,7 @@ function getSiblingTilesAndOffsets(
     zoom: centerIndex.zoom
   };
 
-  return Promise.resolve(imgProperties).catch((e) => { throw new Error(e) });
-};
+  return Promise.resolve(imgProperties).catch((e) => { throw new Error(e); });
+}
 
 module.exports = getSiblingTilesAndOffsets;

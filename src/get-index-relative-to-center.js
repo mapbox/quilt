@@ -6,11 +6,11 @@ function getIndexRelativeToCenter(point, centerIndex, dimensions, tileSize = TIL
   /*
     Note:
     - point, dimensions, & tileSize are in pixel units
-    - centerIndex and return value are tile indices 
+    - centerIndex and return value are tile indices
   */
   const pxCoord = {
     column: centerIndex.column,
-    row: centerIndex.row,
+    row: centerIndex.row
   };
   pxCoord.column += (point.x - (dimensions.w / 2)) / tileSize;
   pxCoord.row += (point.y - (dimensions.h / 2)) / tileSize;
@@ -20,6 +20,6 @@ function getIndexRelativeToCenter(point, centerIndex, dimensions, tileSize = TIL
     row: Math.floor(pxCoord.row),
     zoom: centerIndex.zoom
   };
-};
+}
 
 module.exports = getIndexRelativeToCenter;

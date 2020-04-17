@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 const pRetry = require('p-retry');
 
 function getStaticTile(url, pxOffsets) {
-  const getImg = async attempt => {
+  const getImg = async (attempt) => {
     (attempt > 1) ? url += '&fresh=true' : url;
     const response = await fetch(url);
 
@@ -20,13 +20,13 @@ function getStaticTile(url, pxOffsets) {
     }
 
     return response;
-  }
+  };
 
-  return pRetry(attempt => getImg(attempt), {
+  return pRetry((attempt) => getImg(attempt), {
     retries: FETCH_RETRIES
   })
-    .then(res => res.buffer())
-    .then(buffer => {
+    .then((res) => res.buffer())
+    .then((buffer) => {
       return {
         buffer: buffer,
         x: pxOffsets.x,
@@ -34,7 +34,7 @@ function getStaticTile(url, pxOffsets) {
         reencode: true
       };
     })
-    .catch(e => {
+    .catch((e) => {
       throw new Error(e);
     });
 }

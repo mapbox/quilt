@@ -20,7 +20,7 @@ describe('makeGetQuilt', () => {
   test('returns on 200', async () => {
     const response = Promise.resolve({
       status: 200,
-      buffer: () => { return mockBuffer }
+      buffer: () => { return mockBuffer; }
     });
 
     fetch.mockImplementation(() => response);

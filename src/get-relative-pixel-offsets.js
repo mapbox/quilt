@@ -9,6 +9,6 @@ function getRelativePx(tileIndex, centerIndex, dimensions, tileSize = TILE_SIZE)
   };
 
   return relativePx;
-};
+}
 
 module.exports = getRelativePx;
