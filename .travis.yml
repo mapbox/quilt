@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+- 10
+- 12
+before_install:
+- echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
+script: npm test
