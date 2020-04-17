@@ -1,0 +1,11 @@
+{
+  "extends": ["@mapbox/eslint-config-mapbox"],
+  "overrides": [
+    {
+      "files": ["*.test.js"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
+}
