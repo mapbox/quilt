@@ -27,7 +27,7 @@ describe('getSiblingTilesAndOffsets', () => {
     });
 
     getSiblingTiles(mockPx, 3, 1000).then((imgProps) => {
-      expect(imgProps.tiles.length).toEqual(ImgDim1000.tile.length);
+      expect(imgProps.tiles.length).toEqual(ImgDim1000.tiles.length);
     });
   });
 
