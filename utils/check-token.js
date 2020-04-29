@@ -2,7 +2,7 @@
 
 function checkToken(token) {
 
-  if (!token || !token.match(/^(sk|pk)\.([^/]*)$/)) {
+  if (!token || !token.match(/^(sk|pk|tk)\.([^/]*)$/)) {
     throw new Error('Invalid accessToken');
   }
 
