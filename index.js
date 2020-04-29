@@ -11,8 +11,8 @@ function makeGetQuilt(coordinates, zoom, length = DEFAULT_LENGTH, decode = true)
   return (style) => {
     const pixelCoords = getPixelCoordinates(coordinates, zoom);
     const finalImage = getSiblingTilesAndOffsets(pixelCoords, zoom, length)
-      .then((imageIngredients) => { return getAllTiles(imageIngredients, style); })
-      .then((requiredTiles) => { return stitchTiles(requiredTiles, length, decode); })
+      .then((imageIngredients) => getAllTiles(imageIngredients, style))
+      .then((requiredTiles) => stitchTiles(requiredTiles, length, decode))
       .catch((e) => { throw new Error(e); });
 
     return finalImage;
