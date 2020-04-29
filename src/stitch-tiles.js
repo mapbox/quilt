@@ -2,9 +2,8 @@
 
 const { DEFAULT_LENGTH } = require('../utils/constants');
 const mapnik = require('mapnik');
-const { PNG } = require('pngjs');
 
-async function stitchTiles(tileArray, length = DEFAULT_LENGTH, decode = true) {
+async function stitchTiles(tileArray, length = DEFAULT_LENGTH) {
   const tiles = await tileArray;
 
   return new Promise((resolve, reject) => {
@@ -16,12 +15,7 @@ async function stitchTiles(tileArray, length = DEFAULT_LENGTH, decode = true) {
         reencode: true
       }, (err, img) => {
         if (err) return reject(err);
-        return resolve(
-          {
-            decoded: decode ? PNG.sync.read(img) : null,
-            original: img.toString('base64')
-          }
-        );
+        return resolve(img);
       });
   });
 }

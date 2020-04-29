@@ -1,7 +1,6 @@
 'use strict';
 
 const stitchTiles = require('../src/stitch-tiles');
-const { PNG } = require('pngjs');
 const fs = require('fs');
 
 const mockTileBuffer = fs.readFileSync(__dirname + '/fixtures/fake-tile.png');
@@ -12,25 +11,12 @@ const mockTileArray = Promise.all([
   { buffer: mockTileBuffer, x: 340, y: 340, reencode: true }
 ]);
 
-const expected = fs.readFileSync(__dirname + '/fixtures/stitch-expected.png');
-
 describe('stitchTiles', () => {
-  test('generates expected decoded image', () => {
-    const expectDecoded = {
-      decoded: PNG.sync.read(expected),
-      original: expected.toString('base64')
-    };
-
-    stitchTiles(mockTileArray).then((result) => {
-      expect(result).toEqual(expectDecoded);
-    });
-  });
-
-  test('generates expected non-decoded image', () => {
-    const expectedNonDecoded = { decoded: null, original: expected.toString('base64') };
+  test('generates expected string binary', () => {
+    const expected = fs.readFileSync(__dirname + '/fixtures/stitch-expected.png');
 
     stitchTiles(mockTileArray, 500, false).then((result) => {
-      expect(result).toEqual(expectedNonDecoded);
+      expect(result).toEqual(expected);
     });
   });
 

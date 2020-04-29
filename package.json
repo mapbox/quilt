@@ -43,8 +43,7 @@
     "@mapbox/sphericalmercator": "^1.1.0",
     "mapnik": "^4.4.0",
     "node-fetch": "^2.6.0",
-    "p-retry": "^4.2.0",
-    "pngjs": "^3.4.0"
+    "p-retry": "^4.2.0"
   },
   "devDependencies": {
     "@mapbox/eslint-config-mapbox": "^2.0.1",
