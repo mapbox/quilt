@@ -27,10 +27,7 @@ describe('makeGetQuilt', () => {
     const getQuilt = makeGetQuilt(...options);
     const image = await getQuilt(fixture);
 
-    expect(image).toEqual({
-      decoded: null,
-      original: expect.any(String)
-    });
+    expect(image).toEqual(expect.any(Buffer));
   });
 
   test('retries on 404', async () => {
@@ -41,10 +38,7 @@ describe('makeGetQuilt', () => {
 
     fetch.mockImplementation(() => response);
     const getQuilt = makeGetQuilt(...options);
-    expect(getQuilt(fixture)).resolves.toEqual({
-      decoded: null,
-      original: undefined
-    });
+    expect(getQuilt(fixture)).resolves.toEqual(undefined);
   });
 
   test('throws on 403', async () => {
