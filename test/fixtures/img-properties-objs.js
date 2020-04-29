@@ -26,15 +26,18 @@ module.exports.ImgDim1000 = {
 
 module.exports.ImgTs256 = {
   tiles: [
-    { x: 3, y: 2, z: 4, px: -11, py: -250 },
-    { x: 3, y: 3, z: 4, px: -11, py: 6 },
-    { x: 3, y: 4, z: 4, px: -11, py: 262 },
-    { x: 4, y: 2, z: 4, px: 245, py: -250 },
-    { x: 4, y: 3, z: 4, px: 245, py: 6 },
-    { x: 4, y: 4, z: 4, px: 245, py: 262 }
+    { x: 7, y: 6, z: 3, px: -17, py: -239 },
+    { x: 0, y: 6, z: 3, px: -1809, py: -239 },
+    { x: 1, y: 6, z: 3, px: -1553, py: -239 },
+    { x: 7, y: 7, z: 3, px: -17, py: 17 },
+    { x: 0, y: 7, z: 3, px: -1809, py: 17 },
+    { x: 1, y: 7, z: 3, px: -1553, py: 17 },
+    { x: 7, y: 8, z: 3, px: -17, py: 273 },
+    { x: 0, y: 8, z: 3, px: -1809, py: 273 },
+    { x: 1, y: 8, z: 3, px: -1553, py: 273 }
   ],
   dimensions: { h: 500, w: 500 },
-  center: { column: 4, row: 3, zoom: 4 }
+  center: { column: 8, row: 7, zoom: 3 }
 };
 
 module.exports.ImgTs1024 = {
