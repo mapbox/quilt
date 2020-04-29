@@ -24,7 +24,7 @@ function getSiblingTilesAndOffsets(
   // in order to make the final image
   for (let row = topLeftIndex.row; row <= bottomRightIndex.row; row++) {
     if (row < 0) continue;
-    if (row >= maxTiles) break;
+    if (row > maxTiles) break;
     for (let column = topLeftIndex.column; column <= bottomRightIndex.column; column++) {
       const coordinate = {
         column: column,
@@ -54,7 +54,7 @@ function getSiblingTilesAndOffsets(
     zoom: centerIndex.zoom
   };
 
-  return Promise.resolve(imgProperties).catch((e) => { throw new Error(e); });
+  return Promise.resolve(imgProperties);
 }
 
 module.exports = getSiblingTilesAndOffsets;
