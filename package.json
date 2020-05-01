@@ -1,0 +1,54 @@
+{
+  "name": "@mapbox/quilt",
+  "version": "0.1.0",
+  "description": "A light-weight utility library for patching static tiles together.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "eslint . && jest --runInBand --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapbox/quilt.git"
+  },
+  "keywords": [
+    "mapbox",
+    "map",
+    "tiles"
+  ],
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  },
+  "author": {
+    "name": "Mapbox",
+    "email": "info@mapbox.com",
+    "url": "https://www.mapbox.com/"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mapbox/quilt/issues"
+  },
+  "homepage": "https://github.com/mapbox/quilt#readme",
+  "dependencies": {
+    "@mapbox/sphericalmercator": "^1.1.0",
+    "mapnik": "4.3.1",
+    "node-fetch": "^2.6.0",
+    "p-retry": "^4.2.0"
+  },
+  "devDependencies": {
+    "@mapbox/eslint-config-mapbox": "^2.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-node": "^9.1.0",
+    "jest": "^25.2.0"
+  }
+}
