@@ -41,9 +41,9 @@
   "homepage": "https://github.com/mapbox/quilt#readme",
   "dependencies": {
     "@mapbox/sphericalmercator": "^1.1.0",
-    "mapnik": "4.3.1",
     "node-fetch": "^2.6.0",
-    "p-retry": "^4.2.0"
+    "p-retry": "^4.2.0",
+    "sharp": "^0.25.3"
   },
   "devDependencies": {
     "@mapbox/eslint-config-mapbox": "^2.0.1",

@@ -26,10 +26,9 @@ describe('getStaticTile', () => {
     const staticTile = await getStaticTile(urlFixture, pxFixture);
 
     expect(staticTile).toEqual({
-      buffer: expect.any(Object),
-      reencode: true,
-      x: 256,
-      y: 256
+      input: expect.any(Object),
+      top: 256,
+      left: 256
     });
   });
 
@@ -42,8 +41,9 @@ describe('getStaticTile', () => {
     fetch.mockImplementation(() => response);
     const staticTile = getStaticTile(urlFixture, pxFixture);
     expect(staticTile).resolves.toEqual({
-      decoded: null,
-      original: undefined
+      input: undefined,
+      top: null,
+      left: null
     });
   });
 

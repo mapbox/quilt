@@ -21,11 +21,11 @@ describe('stitchTiles', () => {
   });
 
   test('throws if mapnik blend throws', () => {
-    const mockBadTileArray = Promise.all(['This is not a tile buffer object']);
+    const mockBadTileArray = Promise.all(['not a buffer']);
 
     expect(stitchTiles(mockBadTileArray)).rejects.toThrow();
     expect(stitchTiles(mockBadTileArray)).rejects.toEqual(
-      TypeError('Uncaught TypeError: First argument must be an array of Buffers.')
+      Error('Expected object for image to composite but received not a buffer of type string')
     );
   });
 });

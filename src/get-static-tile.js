@@ -28,10 +28,9 @@ function getStaticTile(url, pxOffsets) {
     .then((res) => res.buffer())
     .then((buffer) => {
       return {
-        buffer: buffer,
-        x: pxOffsets.x,
-        y: pxOffsets.y,
-        reencode: true
+        input: buffer,
+        top: pxOffsets.x,
+        left: pxOffsets.y
       };
     })
     .catch((e) => {
