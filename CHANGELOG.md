@@ -1,4 +1,4 @@
-# master
+# main
 
 # v0.1.0
 
