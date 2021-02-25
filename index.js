@@ -5,6 +5,7 @@ const getPixelCoordinates = require('./src/get-pixel-coordinates');
 const getSiblingTilesAndOffsets = require('./src/get-sibling-tiles-and-offsets');
 const getAllTiles = require('./src/get-all-static-tiles');
 const stitchTiles = require('./src/stitch-tiles');
+const getTileUrl = require('./src/utils/get-tile-url');
 
 
 function makeGetQuilt(coordinates, zoom, length = DEFAULT_LENGTH, decode = true) {
@@ -19,4 +20,10 @@ function makeGetQuilt(coordinates, zoom, length = DEFAULT_LENGTH, decode = true)
   };
 }
 
-module.exports = makeGetQuilt;
+module.exports = { 
+  makeGetQuilt,
+  getPixelCoordinates,
+  getSiblingTilesAndOffsets,
+  stitchTiles,
+  getTileUrl
+ };
