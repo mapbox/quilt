@@ -4,7 +4,7 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 jest.mock('node-fetch', () => jest.fn());
 
-const makeGetQuilt = require('../index');
+const { makeGetQuilt } = require('../index');
 const accessToken = process.env.MAPBOX_ACCESS_TOKEN || process.env.MapboxAccessToken;
 
 const fixture = {
