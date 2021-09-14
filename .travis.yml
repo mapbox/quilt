@@ -3,3 +3,5 @@ node_js:
 - 12
 - 14
 script: npm test
+before_install:
+- echo $MAPBOX_ACCESS_TOKEN | cut -f 2 -d . | base64 --decode
