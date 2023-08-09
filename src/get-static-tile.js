@@ -8,7 +8,6 @@ function getStaticTile(url, pxOffsets) {
   const getImg = async (attempt) => {
     (attempt > 1) ? url += '&fresh=true' : url;
     const response = await fetch(url);
-
     // Throw if resource doesn't exist to trigger a retry
     if (response.status === 404) {
       throw new Error(response.statusText);

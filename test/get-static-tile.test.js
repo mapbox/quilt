@@ -34,17 +34,26 @@ describe('getStaticTile', () => {
   });
 
   test('retries on 404', async () => {
-    const response = Promise.resolve({
+    const response404 = Promise.resolve({
       status: 404,
       buffer: jest.fn()
     });
-
-    fetch.mockImplementation(() => response);
-    const staticTile = getStaticTile(urlFixture, pxFixture);
-    expect(staticTile).resolves.toEqual({
-      decoded: null,
-      original: undefined
+    const response200 = Promise.resolve({
+      status: 200,
+      buffer: jest.fn(() => ({
+        toString: jest.fn()
+      }))
     });
+
+    fetch.mockImplementationOnce(() => response404).mockImplementationOnce(() => response200);
+    const staticTile = await getStaticTile(urlFixture, pxFixture);
+    expect(staticTile).toEqual({
+      buffer: expect.any(Object),
+      reencode: true,
+      x: 256,
+      y: 256
+    });
+    expect(fetch).toHaveBeenCalledTimes(2);
   });
 
   test('throws on 403', async () => {

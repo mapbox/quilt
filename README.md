@@ -26,7 +26,7 @@ const finalImage = getTileQuilt({ style, accessToken })
 
 ## Developing
 
-The package is tested on node v10 & v12, and cannot be assumed to work as expected when using alternate versions.
+The package is tested on node v10 & v12 & v16, and cannot be assumed to work as expected when using alternate versions.
 
 Tests are written with Jest & require that you have a valid Mapbox Access Token available via an environment variable (both `MapboxAccessToken` or `MAPBOX_ACCESS_TOKEN` will be considered valid variable names). 
 
