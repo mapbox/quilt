@@ -2,7 +2,7 @@
 
 ## v0.3.0
 
-* Update to node v16
+* Update to node v18
 
 ## v0.2.0
 
