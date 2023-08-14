@@ -17,6 +17,10 @@ const mockBuffer = fs.readFileSync(__dirname + '/fixtures/fake-tile.png');
 const options = [[0, 0], 1, 500, false];
 
 describe('makeGetQuilt', () => {
+  beforeEach(() => {
+    fetch.mockClear();
+  });
+
   test('returns on 200', async () => {
     const response = Promise.resolve({
       status: 200,
@@ -31,14 +35,20 @@ describe('makeGetQuilt', () => {
   });
 
   test('retries on 404', async () => {
-    const response = Promise.resolve({
+    const response404 = Promise.resolve({
       status: 404,
       buffer: jest.fn()
     });
+    const response200 = Promise.resolve({
+      status: 200,
+      buffer: () => { return mockBuffer; }
+    });
 
-    fetch.mockImplementation(() => response);
+    fetch.mockImplementationOnce(() => response404).mockImplementation(() => response200);
     const getQuilt = makeGetQuilt(...options);
-    expect(getQuilt(fixture)).resolves.toEqual(undefined);
+    const image = await getQuilt(fixture);
+    expect(image).toEqual(expect.any(Buffer));
+    expect(fetch).toHaveBeenCalledTimes(5);
   });
 
   test('throws on 403', async () => {
